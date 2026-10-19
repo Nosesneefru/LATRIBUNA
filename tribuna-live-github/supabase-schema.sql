@@ -55,6 +55,7 @@ grant insert, update, delete on public.subscriptions to authenticated;
 grant select, insert, update, delete on public.streams to authenticated;
 
 drop policy if exists "Anyone can view published matches" on public.matches;
+drop policy if exists "Subscribers and admins can view published matches" on public.matches;
 create policy "Subscribers and admins can view published matches"
   on public.matches for select
   to authenticated
